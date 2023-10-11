@@ -14,5 +14,5 @@ public class UserRegister
     public string Password { get; set; } = string.Empty;
 
     [Compare(nameof(Password))]
-    public string ConfirmPassowrd { get; set; } = string.Empty;
+    public string ConfirmPassword { get; set; } = string.Empty;
 }
