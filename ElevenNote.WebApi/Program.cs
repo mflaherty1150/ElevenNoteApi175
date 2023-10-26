@@ -1,6 +1,7 @@
 using System.Text;
 using ElevenNote.Data;
 using ElevenNote.Data.Entities;
+using ElevenNote.Models.Maps;
 using ElevenNote.Services.Note;
 using ElevenNote.Services.Token;
 using ElevenNote.Services.User;
@@ -80,6 +81,8 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+builder.Services.AddAutoMapper(typeof(NoteMapProfile));
 
 var app = builder.Build();
 

@@ -34,6 +34,7 @@ namespace ElevenNote.WebApi.Controllers
 
         // GET api/Note
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<NoteListItem>), 200)]
         public async Task<IActionResult> GetAllNotes()
         {
             var notes = await _noteService.GetAllNotesAsync();
@@ -42,6 +43,8 @@ namespace ElevenNote.WebApi.Controllers
 
         // GET api/Note/5
         [HttpGet("{noteId:int}")]
+        [ProducesResponseType(typeof(IEnumerable<NoteListItem>), 200)]
+        [ProducesResponseType(404)]
         public async Task<IActionResult> GetNoteById([FromRoute] int noteId)
         {
             NoteDetail? detail = await _noteService.GetNoteByIdAsync(noteId);
